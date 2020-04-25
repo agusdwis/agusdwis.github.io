@@ -1,13 +1,56 @@
-/*a{*/
-/*    color:black;*/
-/*    text-decoration:none;*/
-/*}*/
-#wrap{
-    margin-left:15%;
-    z-index:-1;
+.main-app {
+    background: black url(background.jpg) no-repeat center center;
+    background-size: cover;
+    width: 1340px;
+    height:99%;
+    border: 1px solid black;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    position: fixed;
+}
+
+.grid-container {
+    display: inline-grid;
+    margin-left: 16%;
+    grid-template-columns: auto auto auto;
+}
+
+.button1 {
+    overflow: auto;
+    margin-left: -200px;
+    margin-top: 47px;
+    float: left;
+    width: 230px;
+    background: url("image/WASD keyboard.png") no-repeat center center;
+    background-size: 200px;
+}
+
+.button2 {
+    overflow: auto;
+    margin-left: 850px;
+    margin-top: 47px;
+    float: left;
+    height: 200px;
+    width: 230px;
+    background: url("image/IJKL keyboard.png") no-repeat center center;
+    background-size: 200px;
+}
+
+#gameScreen {
     width:800px;
-    height:400px;
-    background: black url(image/background_sahara.jpg) no-repeat;
+    position: fixed;
+    margin-left: 4%;
+    margin-top: 1%;
+}
+
+
+#wrap{
+    margin-top: 1%;
+    width:800px;
+    height:550px;
+    background: black url(image/background_rooftop.jpg) no-repeat;
+    background-size: cover;
     position:fixed;
     border: 1px solid black;
     border-radius: 4px;
@@ -15,15 +58,6 @@
     -webkit-border-radius: 4px;
 }
 
-#info{
-    margin-left:15%;
-    margin-top:50px;
-    width:800px;
-    height:50px;
-    border-radius: 5px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-}
 #player{
     float:left;
     margin-top:200px;
@@ -32,6 +66,7 @@
     background-color:transparent;
     background-image:url(player.png);
 }
+
 #enemy{
     float:right;
     position:relative;
@@ -41,16 +76,8 @@
     background-color:transparent;
     background-image:url(enemy.png);
 }
-#msg{
-    border-radius: 4px;
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
-    margin-left:15%;
-    width:800px;
-    height: 50px;
-    border: 1px solid black;
-}
-#p1,#p2{
+
+#p1, #p2{
     margin-left:20px;
     margin-right:20px;
 }
@@ -58,14 +85,14 @@
     border-radius: 4px;
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
-    background-color:#E9D66B;
-    height:20px;
+    background-color: #e93100;
+    height:15px;
 }
 .blife{
     border-radius: 4px;
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
-    height:20px;
+    height:15px;
     width:300px;
     border: 1px solid black;
 }
@@ -85,4 +112,5 @@
     width:300px;
     border: 1px solid black;
 }
+
 
