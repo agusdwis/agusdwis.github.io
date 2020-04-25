@@ -14,7 +14,7 @@ let up2 = 0,down2 = 0, left2 = 0, right2 = 0, punch2 = 0, kick2 = 0, push2 = 0,p
 let k2 = 0, p2 = 0;
 
 
-var hit1 = 0, hit2 =0, c1 = 0 , c2 = 0 ,HitD = 15;
+var hit1 = 0, hit2 =0, c1 = 0 , c2 = 0 ,hitDamage = 15;
 var hit1c1 = 0, hit1c2 =0 , hit2c1 =0, hit2c2 =0, isdown1=0, isdown2=0, isup1=0, isup2=0, bup1=0, bup2 = 0;
 
 
@@ -77,67 +77,78 @@ function startGame() {
 
     if(hit1 === 0){
         isup1 = isdown1= 0;
-        if(kick1 === 1 && player01_energy > 0) frame = (frame === 2 || k1 === 1) ? 0:2;
-        else if(punch1 === 1 && player01_energy > 0) frame = (frame === 3 || p1 === 1) ? 0:3;
-        else if(push1 === 1 && aside===1 && player01_energy>0) {
-            player01_energy -=damage;
-            player02_move("url(enemypush.png)");
-            if(player02_pos_right-d>=0) { player02_pos_right-=d;player02_posx+=d; aside=0;}
-            else { player02_pos_right=0;player02_posx=800-WD; aside=0;}
-            player02.style.marginRight = player02_pos_right;
-        }
-        else if(up1 === 1) {frame = (frame===4 || bup1===1)?0:4;isup1=1;}
-        else if(down1 === 1) {frame = 5;isdown1=1;}
+        if(kick1 === 1 && player01_energy > 0) frame = (frame === 2) ? 0:2;
+        else if(punch1 === 1 && player01_energy > 0) frame = (frame === 3) ? 0:3;
+        else if(up1 === 1) {frame = (frame === 4) ? 0:4; isup1=1;}
+        else if(down1 === 1) {frame = 5; isdown1=1;}
         else if(right1 === 1) {
-            if(player01_posx+w+WD<=player02_posx) player01_posx+=w;
-            else aside=1;
+            if(player01_posx + w + WD <= player02_posx) player01_posx = player01_posx + w;
+            else aside = 1;
             player01.style.marginLeft = player01_posx;
-            frame = (frame===1)?0:1;
-        } else if(left1 === 1) {
-            if(player01_posx-w>=0) {player01_posx-=w;aside=0;}
+            frame = (frame === 1) ? 0:1;
+        }
+        else if(left1 === 1) {
+            if(player01_posx - w >= 0){
+                player01_posx = player01_posx - w;
+                aside=0;}
             player01.style.marginLeft = player01_posx;
-            frame = (frame===1)?0:1;
-        } else frame = 0;
+            frame = (frame === 1) ? 0:1;
+        }
+        else frame = 0;
     }
 
     player01.style.marginTop = 200;
-    c1 = (c1+1)%HitD;
-    if(hit1===1){
-        if(hit1c1===1)player01_move("url(playerhit1.png)");
+    // c1 = (c1+1) % hitDamage;
+
+    if(hit1 === 1){
+        if(hit1c1 === 1)player01_move("url(playerhit1.png)");
         else player01_move("url(playerhit2.png)");
-        if(c1===0){ hit1 = hit1c1 = hit1c2 = 0;}
-    } else if(frame === 0) {
+        if(c1 === 0){ hit1 = hit1c1 = hit1c2 = 0;}
+    }
+    else if(frame === 0) {
         player01_move("url(player.png)");
-    } else if(frame === 1) {
+    }
+    else if(frame === 1) {
         player01_move("url(player1.png)");
-    } else if(frame === 2) {
-        k1 = 1;
-        player01_energy -=damage;
+    }
+    else if(frame === 2) {
+        // k1 = 1;
+        player01_energy = player01_energy - damage;
         player01_move("url(kick.png)");
-        if(aside===1 && isup2===0){player02_life-=20;hit2=1;hit2c2=1;}
-    } else if(frame === 3) {
-        p1 = 1;
+        if(aside === 1 && isup2 === 0){
+            player02_life = player02_life - 20;
+            hit2 = 1;
+            hit2c2 = 1;
+        }
+    }
+    else if(frame === 3) {
+        // p1 = 1;
         player01_move("url(punch.png)");
-        player01_energy -= damage;
-        if(aside===1 && isdown2===0){	player02_life-=20;hit2=1;hit2c1=1;}
-    } else if(frame === 4) {
-        bup1 = 1;
+        player01_energy = player01_energy - damage;
+        if( aside === 1 && isdown2 === 0){
+            player02_life = player02_life - 20;
+            hit2 = 1;
+            hit2c1 = 1;}
+    }
+    else if(frame === 4) {
+        // bup1 = 1;
         player01_move("url(playerup.png)");
         player01.style.marginTop = 200-120;
-    } else if(frame === 5) {
+    }
+    else if(frame === 5) {
         player01_move("url(playerdown.png)");
-        player01.style.marginTop = 200+20;
+        player01.style.marginTop = 200 + 20;
     }
 
-    if(hit2===0){
+    if(hit2 === 0){
         isdown2 = isup2 =  0;
         if(kick2 === 1 && player02_energy>0) player2_frame = (player2_frame===2 || k2 === 1)?0:2;
         else if(punch2 === 1 && player02_energy>0) player2_frame = (player2_frame===3 || p2===1)?0:3;
         else if(push2 === 1 && aside===1 && player02_energy>0) {
             player02_energy -= damage;
             player01_move("url(playerpush.png)");
-            if(posx-d>=0) {posx-=d;aside=0;}
-            else {posx=0;aside=0;}
+            if(player01_posx-d>=0) {player01_posx-=d;aside=0;}
+            else {player01_posx=0;aside=0;}
             player01.style.marginLeft = player01_posx;
         }else if(up2 === 1) {player2_frame = (player2_frame===4 || bup2 === 1)?0:4;isup2=1;}
         else if(down2 === 1) {player2_frame = 5; isdown2 = 1;}
@@ -153,7 +164,7 @@ function startGame() {
         } else player2_frame = 0;
     }
     player02.style.marginTop = 200;
-    c2 = (c2+1)%HitD;
+    c2 = (c2+1)%hitDamage;
     if(hit2===1){
         if(hit2c1===1) player02_move("url(enemyhit1.png)");
         else player02_move("url(enemyhit2.png)");
