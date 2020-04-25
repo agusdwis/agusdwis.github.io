@@ -2,21 +2,101 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="style.css" />
     <title>Fight Me!!</title>
 </head>
 <body>
-    <!--Canvas-->
-    <div class="container">
-        <div class="row">
-            <div class="col-10 offset-1">
+    <div class="grid-container">
+        <div class="item1">
+            <table class="tablePlayer">
+                <tr>
+                <td>
+                    <h5 class=""> Player 1 </h5>
+                </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="top.png" alt="" class="controller"> jump
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="bottom.jpeg" alt="" class="controller"> duck
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="right.jpg" alt="" class="controller"> Punch
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="D.png" alt="" class="controller"> Retreat
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!--Canvas-->
+        <div class="item2">
+            
+                <div class="grid-container-in">
+                    <div class="columnLeft">
+                        <div id="nameBar1"></div>
+                        <div id="healthBar1"></div>
+                        <div id="energyBar1"></div>
+                    </div> 
+                    <div class="columnMid">                            
+                        <div id="timer" ></div>
+                    </div>
+                    <div class="columnRight">             
+                        <div id="nameBar2"></div>
+                        <div id="healthBar2"></div>
+                        <div id="energyBar2"></div>
+                    </div> 
+                </div>                   
                 <canvas id="gameScreen"></canvas>
+        </div>      
+        <!--Canvas-->
+        <div class="item3">
+            <table class="tablePlayer">
+                <tr>
+                <td>
+                    <h5 class=""> Player 2 </h5>
+                </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="top.png" alt="" class="controller"> jump
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="bottom.jpeg" alt="" class="controller"> duck
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="right.jpg" alt="" class="controller"> Punch
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="D.png" alt="" class="controller"> Retreat
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="item4">
+            <div id="hero-bar">
             </div>
         </div>
+        <div class="item5">
+            <button class="button1">Player 1</button>
+        </div>
+        <div class="item6">
+            <button class="button2">Player 2</button>
+        </div>
     </div>
-    <!--Canvas-->
-
     <!--Script-->
         <script type="text/javascript" src="script.js"></script>
     <!--Script-->
