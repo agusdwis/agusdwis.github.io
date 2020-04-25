@@ -1,24 +1,71 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Human</title>
+    <script type="text/javascript" src="script_ref.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <title>Fight Me!!</title>
+
+    <script type="text/javascript">
+
+      var A = new Array(19);
+      A = ["/image/background_sahara.png","enemy.png","enemy1.png","enemykick.png","enemypunch.png","kick.png","player.png","player1.png",
+      "punch.png","playerhit1.png","playerhit2.png","enemyhit1.png","enemyhit2.png","enemyup.png","playerup.png","enemydown.png","playerdown.png",
+      "enemypush.png","playerpush.png"];
+      let Image1;
+      for (let i = 0; i < 19; i++) {
+          Image1 = new Image(150, 20);
+          Image1.src = A[i];
+      }
+    </script>
+
 </head>
 <body>
-    <!--Canvas-->
-    <div class="container">
-        <div class="row">
-            <div class="col-10 offset-1">
-                <canvas id="gameScreen"></canvas>
-            </div>
-        </div>
+<div id="help_1"></div>
+<div id="wrap">
+    <div id="player"></div>
+    <div id="enemy"></div>
+</div>
+<div id="but">
+    <p>Player 1 Buttons:</p>
+    <ul>
+        <li>W : Jump</li>
+        <li>A : Left</li>
+        <li>D : Right</li>
+        <li>S : Duck</li>
+        <li>G : Punch</li>
+        <li>H : Kick</li>
+        <li>Q : Push</li>
+    </ul>
+    <p>Player 2 Buttons:</p>
+    <ul>
+        <li>Up : Jump</li>
+        <li>Left : Left</li>
+        <li>Right : Right</li>
+        <li>Down : Duck</li>
+        <li>O : Punch</li>
+        <li>P : Kick</li>
+        <li>L : Push</li>
+    </ul>
+</div>
+<div id="info">
+    <div class="blife" style="float: left;">
+        <div id="mylife" class="life"></div>
     </div>
-    <!--Canvas-->
-
-    <!--Script-->
-        <script type="text/javascript" src="script.js"></script>
-    <!--Script-->
+    <div class="blife" style="float: right;">
+        <div id="enemyslife" class="life" style="float: right;"></div>
+    </div>
+    <br />
+    <div class="benergy" style="float: left;">
+        <div id="myenergy" class="energy"></div>
+    </div>
+    <div class="benergy" style="float: right;">
+        <div id="enemysenergy" class="energy" style="float: right;"></div>
+    </div>
+</div>
+<div id="msg">
+    <p id="p1" style="float: left;"></p>
+    <p id="p2" style="float: right;"></p>
+    <div style="text-align: center;"><p id="center"></p></div>
+    <div style="text-align: center;"><p id="again"></p></div>
+</div>
 </body>
 </html>

@@ -1,6 +1,88 @@
-#gameScreen{
-    border: 5px solid black;
-    /*width: 80%;*/
-    /*height: 622px;*/
-
+/*a{*/
+/*    color:black;*/
+/*    text-decoration:none;*/
+/*}*/
+#wrap{
+    margin-left:15%;
+    z-index:-1;
+    width:800px;
+    height:400px;
+    background: black url(image/background_sahara.jpg) no-repeat;
+    position:fixed;
+    border: 1px solid black;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
 }
+
+#info{
+    margin-left:15%;
+    margin-top:50px;
+    width:800px;
+    height:50px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+#player{
+    float:left;
+    margin-top:200px;
+    width:168px;
+    height:200px;
+    background-color:transparent;
+    background-image:url(player.png);
+}
+#enemy{
+    float:right;
+    position:relative;
+    margin-top:200px;
+    width:168px;
+    height:200px;
+    background-color:transparent;
+    background-image:url(enemy.png);
+}
+#msg{
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    margin-left:15%;
+    width:800px;
+    height: 50px;
+    border: 1px solid black;
+}
+#p1,#p2{
+    margin-left:20px;
+    margin-right:20px;
+}
+.life{
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    background-color:#E9D66B;
+    height:20px;
+}
+.blife{
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    height:20px;
+    width:300px;
+    border: 1px solid black;
+}
+
+.energy{
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    background-color:#318CE7;
+    height:10px;
+}
+.benergy{
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    height:10px;
+    width:300px;
+    border: 1px solid black;
+}
+
