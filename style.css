@@ -135,6 +135,7 @@ body{
     width:300px;
     border: 1px solid black;
 }
+<<<<<<< HEAD
 
 #player01_name, #player02_name {
     margin-bottom: 1%;
@@ -214,3 +215,5 @@ body{
     color:#C9C9C9;
     text-shadow:2px 2px 2px #FF7899;
 }
+=======
+>>>>>>> 9efc9a4f120120c781b8de44feb3887dba3407f1
