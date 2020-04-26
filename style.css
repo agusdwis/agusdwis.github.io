@@ -39,8 +39,15 @@ body{
     margin-top: 47px;
     float: left;
     width: 230px;
-    background: url("image/WASD keyboard.png") no-repeat center center;
+    height: 420px;
     background-size: 200px;
+    background-color: rgba(255, 255, 255, 0.58);
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+.table1 , .table2 {
+    padding-left: 60px;
 }
 
 .button2 {
@@ -48,10 +55,17 @@ body{
     margin-left: 850px;
     margin-top: 47px;
     float: left;
-    height: 200px;
     width: 230px;
-    background: url("image/IJKL keyboard.png") no-repeat center center;
+    height: 420px;
     background-size: 200px;
+    background-color: rgba(255, 255, 255, 0.58);
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+.alphaBut{
+    margin-left: -80px;
+    font-weight: bolder;
 }
 
 #gameScreen {
@@ -60,7 +74,7 @@ body{
     margin-left: 4%;
     margin-top: 1%;
     padding-bottom: 2%;
-    background-color: rgba(145, 172, 218, 0.71);
+    background-color: rgba(180, 202, 218, 0.62);
     border: 1px solid black;
     border-radius: 4px;
 }

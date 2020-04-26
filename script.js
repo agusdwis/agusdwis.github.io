@@ -2,8 +2,9 @@
 let WD = 168;
 let damage = 50;
 let hitDamage = 15;
+const SOUND_ON = true;
 
-var initial_life = 50;
+var initial_life = 300;
 var initial_energy = 300;
 
 // Player 1
@@ -22,6 +23,32 @@ let up2 = 0,down2 = 0, left2 = 0, right2 = 0, punch2 = 0, kick2 = 0, player2_fra
 // Action 2
 let hit2 = 0, c2 = 0, hit2c1 = 0, hit2c2 = 0, isdown2 = 0, isup2 = 0;
 
+// Setup sound effect
+var punch_fx1 = new Audio("audio/punch_fx.wav");
+var punch_fx2 = new Audio("audio/punch_fx2.wav");
+var kick_fx1 = new Audio("audio/kick_fx.ogg");
+var voice_over = new Audio("audio/voice_over.wav");
+
+let Sound = (src, maxStreams = 1, vol = 1.0) => {
+    this.streamNum = 0;
+    this.streams = [];
+    for (var i = 0; i < maxStreams; i++) {
+        this.streams.push(new Audio(src));
+        this.streams[i].volume = vol;
+    }
+
+    this.play = function() {
+        if (SOUND_ON) {
+            this.streamNum = (this.streamNum + 1) % maxStreams;
+            this.streams[this.streamNum].play();
+        }
+    };
+
+    this.stop = function() {
+        this.streams[this.streamNum].pause();
+        this.streams[this.streamNum].currentTime = 0;
+    }
+};
 
 // Keyboard Function on Keydown
 document.onkeydown = function(event) {
@@ -81,7 +108,7 @@ function restartGame() {
     damage = 50;
     hitDamage = 15;
 
-    initial_life = 50;
+    initial_life = 300;
     initial_energy = 300;
 
     // Player 1
@@ -117,7 +144,9 @@ function startGame() {
     if(hit1 === 0){
         isup1 = isdown1= 0;
         if(kick1 === 1 && player01_energy > 0) frame = (frame === 2) ? 0:2;
-        else if(punch1 === 1 && player01_energy > 0) frame = (frame === 3) ? 0:3;
+        else if(punch1 === 1 && player01_energy > 0) {
+            frame = (frame === 3) ? 0:3;
+        }
         else if(up1 === 1) {frame = (frame === 4) ? 0:4; isup1=1;}
         else if(down1 === 1) {frame = 5; isdown1=1;}
         else if(right1 === 1) {
@@ -158,6 +187,7 @@ function startGame() {
             player02_life = player02_life - 20;
             hit2 = 1;
             hit2c2 = 1;
+            kick_fx1.play();
         }
     }
     else if(frame === 3) {
@@ -167,7 +197,9 @@ function startGame() {
         if( aside === 1 && isdown2 === 0){
             player02_life = player02_life - 20;
             hit2 = 1;
-            hit2c1 = 1;}
+            hit2c1 = 1;
+            punch_fx1.play();
+        }
     }
     else if(frame === 4) {
         // bup1 = 1;
@@ -182,7 +214,9 @@ function startGame() {
     if(hit2 === 0){
         isdown2 = isup2 =  0;
         if(kick2 === 1 && player02_energy > 0) player2_frame = (player2_frame === 2) ? 0:2;
-        else if(punch2 === 1 && player02_energy > 0) player2_frame = (player2_frame === 3) ? 0:3;
+        else if(punch2 === 1 && player02_energy > 0) {
+            player2_frame = (player2_frame === 3) ? 0:3;
+        }
         else if(up2 === 1) {
             player2_frame = (player2_frame === 4) ? 0:4;
             isup2 = 1;
@@ -242,6 +276,7 @@ function startGame() {
             player01_life = player01_life - 20;
             hit1 = 1;
             hit1c1 = 1;
+            punch_fx2.play();
         }
     }
     else if(player2_frame === 4) {
@@ -282,5 +317,6 @@ window.onload = function() {
     document.getElementById('overlay').style.display = "none";
     player01 = document.getElementById("player1");
     player02 = document.getElementById("player2");
+    voice_over.play();
     setInterval("startGame()",100);
 };
