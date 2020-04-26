@@ -105,10 +105,12 @@ document.onkeyup = function(event) {
 
 // restart Game
 function restartGame() {
-    voice_over.play();
-    battle_fight.play();
+    // voice_over.play();
+    // battle_fight.play();
     gameover = 0;
     document.getElementById('overlay').style.display = "none";
+    document.getElementsByClassName('message1').innerHTML = "";
+    document.getElementsByClassName('message2').innerHTML = "";
 
     WD = 168;
     damage = 50;
@@ -193,6 +195,7 @@ function startGame() {
             player02_life = player02_life - 20;
             hit2 = 1;
             hit2c2 = 1;
+            document.getElementsByClassName('message1').innerHTML = "Ulululululul...";
             kick_fx.play();
         }
     }
@@ -204,6 +207,7 @@ function startGame() {
             player02_life = player02_life - 20;
             hit2 = 1;
             hit2c1 = 1;
+            document.getElementsByClassName('message1').innerHTML = "Tendangan Macan!!";
             punch_fx1.play();
         }
     }
@@ -273,6 +277,7 @@ function startGame() {
             player01_life = player01_life - 20;
             hit1 = 1;
             hit1c2 = 1;
+            document.getElementsByClassName('message2').innerHTML = "Maman tuh tinju...";
             kick_fx.play();
         }
     }
@@ -283,6 +288,7 @@ function startGame() {
             player01_life = player01_life - 20;
             hit1 = 1;
             hit1c1 = 1;
+            document.getElementsByClassName('message2').innerHTML = "Sakit Ga bro??";
             punch_fx2.play();
         }
     }
