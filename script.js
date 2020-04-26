@@ -3,16 +3,16 @@ let WD = 168;
 let damage = 50;
 let hitDamage = 15;
 
-var initial_life = 300;
+var initial_life = 50;
 var initial_energy = 300;
 
 // Player 1
-let player01_posx=0, w = 25, d = 200;
+let player01_posx = 0, w = 25, d = 200;
 let player01_life = initial_life, player01_energy = initial_energy;
 let up1 = 0,down1 = 0, left1 = 0, right1 = 0, punch1 = 0, kick1 = 0,frame = 0;
 
 // Action 1
-var hit1 = 0, c1 = 0, hit1c1 = 0, hit1c2 = 0, isdown1 = 0, isup1 = 0;
+let hit1 = 0, c1 = 0, hit1c1 = 0, hit1c2 = 0, isdown1 = 0, isup1 = 0;
 
 // Player 2
 let player02_posx = 800-WD, player02_pos_right = 0, aside = 0;
@@ -20,7 +20,7 @@ let player02_life = initial_life, player02_energy = initial_energy;
 let up2 = 0,down2 = 0, left2 = 0, right2 = 0, punch2 = 0, kick2 = 0, player2_frame = 0;
 
 // Action 2
-var hit2 =0, c2 = 0, hit2c1 =0, hit2c2 =0, isdown2=0, isup2=0;
+let hit2 = 0, c2 = 0, hit2c1 = 0, hit2c2 = 0, isdown2 = 0, isup2 = 0;
 
 
 // Keyboard Function on Keydown
@@ -28,18 +28,18 @@ document.onkeydown = function(event) {
     let key = String.fromCharCode(event.keyCode);
     // Player 1
     if (key === 'W') up1 = 1;
-    if (key === 'S')down1 = 1;
+    if (key === 'S') down1 = 1;
     if (key === 'A') left1 = 1;
     if (key === 'D') right1 = 1;
-    if (key === 'E') punch1 = 1;
-    if (key === 'R') kick1 = 1;
+    if (key === 'Q') punch1 = 1;
+    if (key === 'E') kick1 = 1;
 
     // Player 2
-    if (key === 'U') up2 = 1;
-    if (key === 'J') down2 = 1;
-    if (key === 'H') left2 = 1;
-    if (key === 'K') right2 = 1;
-    if (key === 'I') punch2 = 1;
+    if (key === 'I') up2 = 1;
+    if (key === 'K') down2 = 1;
+    if (key === 'J') left2 = 1;
+    if (key === 'L') right2 = 1;
+    if (key === 'U') punch2 = 1;
     if (key === 'O') kick2 = 1;
 };
 
@@ -51,15 +51,15 @@ document.onkeyup = function(event) {
     if (key === 'S') down1 = 0;
     if (key === 'A') left1 = 0;
     if (key === 'D') right1 = 0;
-    if (key === 'E') punch1 = 0;
-    if (key === 'R') kick1 = 0;
+    if (key === 'Q') punch1 = 0;
+    if (key === 'E') kick1 = 0;
 
     // Player 2
-    if (key === 'U') up2 = 0;
-    if (key === 'J') down2 = 0;
-    if (key === 'H') left2 = 0;
-    if (key === 'K') right2 = 0;
-    if (key === 'I') punch2 = 0;
+    if (key === 'I') up2 = 0;
+    if (key === 'K') down2 = 0;
+    if (key === 'J') left2 = 0;
+    if (key === 'L') right2 = 0;
+    if (key === 'U') punch2 = 0;
     if (key === 'O') kick2 = 0;
 };
 
@@ -72,8 +72,43 @@ let gameover = 0;
 let player01_image = "image/player.png";
 let player02_image = "image/enemy.png";
 
+// restart Game
+function restartGame() {
+    gameover = 0;
+    document.getElementById('overlay').style.display = "none";
+
+    WD = 168;
+    damage = 50;
+    hitDamage = 15;
+
+    initial_life = 50;
+    initial_energy = 300;
+
+    // Player 1
+    player01_posx = 0, w = 25, d = 200;
+    player01_life = initial_life, player01_energy = initial_energy;
+    up1 = 0,down1 = 0, left1 = 0, right1 = 0, punch1 = 0, kick1 = 0,frame = 0;
+
+    // Action 1
+    hit1 = 0, c1 = 0, hit1c1 = 0, hit1c2 = 0, isdown1 = 0, isup1 = 0;
+
+    // Player 2
+    player02_posx = 800-WD, player02_pos_right = 0, aside = 0;
+    player02_life = initial_life, player02_energy = initial_energy;
+    up2 = 0,down2 = 0, left2 = 0, right2 = 0, punch2 = 0, kick2 = 0, player2_frame = 0;
+
+    // Action 2
+    hit2 = 0, c2 = 0, hit2c1 = 0, hit2c2 = 0, isdown2 = 0, isup2 = 0;
+
+    player01.style.marginLeft = player01_posx;
+    player02.style.marginRight = player02_pos_right;
+    startGame();
+}
+
+
 // Main Game
 function startGame() {
+
     // Initial Condition
     if (gameover === 1) return;
     player01_energy = player01_energy + ((player01_energy + 2 > 300) ? 0:2);
@@ -224,10 +259,27 @@ function startGame() {
     document.getElementById('player01_energy').style.width = (player01_energy < 0) ? 0:player01_energy;
     document.getElementById('player02_energy').style.width = (player02_energy < 0) ? 0:player02_energy;
 
+
+    // End of game
+    if(player01_life <= 0 || player02_life <= 0){
+        document.getElementById('overlay').style.display = "block";
+        document.getElementById('playgame').innerHTML = "GAME OVER!";
+
+        if(player01_life <= 0) {
+            document.getElementById('gameresult').innerHTML = "Player 2 Wins!";
+        }
+        else {
+            document.getElementById('gameresult').innerHTML = "Player 1 Wins!";
+        }
+        gameover = 1;
+        document.getElementById('again').innerHTML = '<span id="clickable" onClick="restartGame()">PLAY AGAIN</span>';
+    }
+
 }
 
 // Load screen
 window.onload = function() {
+    document.getElementById('overlay').style.display = "none";
     player01 = document.getElementById("player1");
     player02 = document.getElementById("player2");
     setInterval("startGame()",100);
