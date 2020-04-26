@@ -1,19 +1,26 @@
+// Global variabel
 let WD = 168;
 let damage = 50;
+let hitDamage = 15;
+
+var initial_life = 300;
+var initial_energy = 300;
 
 // Player 1
 let player01_posx=0, w = 25, d = 200;
-let player01_life = 300, player01_energy = 300;
+let player01_life = initial_life, player01_energy = initial_energy;
 let up1 = 0,down1 = 0, left1 = 0, right1 = 0, punch1 = 0, kick1 = 0,frame = 0;
+
+// Action 1
+var hit1 = 0, c1 = 0, hit1c1 = 0, hit1c2 = 0, isdown1 = 0, isup1 = 0;
 
 // Player 2
 let player02_posx = 800-WD, player02_pos_right = 0, aside = 0;
-let player02_life = 300, player02_energy = 300;
+let player02_life = initial_life, player02_energy = initial_energy;
 let up2 = 0,down2 = 0, left2 = 0, right2 = 0, punch2 = 0, kick2 = 0, player2_frame = 0;
 
-
-var hit1 = 0, hit2 =0, c1 = 0 , c2 = 0 ,hitDamage = 15;
-var hit1c1 = 0, hit1c2 =0 , hit2c1 =0, hit2c2 =0, isdown1=0, isdown2=0, isup1=0, isup2=0;
+// Action 2
+var hit2 =0, c2 = 0, hit2c1 =0, hit2c2 =0, isdown2=0, isup2=0;
 
 
 // Keyboard Function on Keydown
@@ -130,7 +137,7 @@ function startGame() {
     else if(frame === 4) {
         // bup1 = 1;
         player01_move(`url${player01_image}`);
-        player01.style.marginTop = 200-120;
+        player01.style.marginTop = 200 - 120;
     }
     else if(frame === 5) {
         player01_move(`url${player01_image}`);
