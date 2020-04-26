@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,89 +5,32 @@
     <title>Fight Me!!</title>
 </head>
 <body>
-    <div class="grid-container">
-        <div class="item1">
-            <table class="tablePlayer">
-                <tr>
-                <td>
-                    <h5 class=""> Player 1 </h5>
-                </td>
-                </tr>
-                <tr>
-                    <td>
-                        <img src="top.png" alt="" class="controller"> jump
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <img src="bottom.jpeg" alt="" class="controller"> duck
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <img src="right.jpg" alt="" class="controller"> Punch
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <img src="D.png" alt="" class="controller"> Retreat
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <!--Canvas-->
-        <div class="item2">
-            
-                <div class="grid-container-in">
-                    <div class="columnLeft">
-                        <div id="nameBar1"></div>
-                        <div id="healthBar1"></div>
-                        <div id="energyBar1"></div>
-                    </div> 
-                    <div class="columnMid">                            
-                        <div id="timer" ></div>
+    <div class="main-app">
+<!--        <audio id="sound" src="audio/music01.mp3"></audio>-->
+        <div class="grid-container">
+            <div class="button1"></div>
+            <div id="gameScreen">
+                <div id="info">
+                    <div class="life_bar" style="float:left;">
+                        <div id="player01_life" class="life"></div>
                     </div>
-                    <div class="columnRight">             
-                        <div id="nameBar2"></div>
-                        <div id="healthBar2"></div>
-                        <div id="energyBar2"></div>
-                    </div> 
-                </div>                   
-                <canvas id="gameScreen"></canvas>
-        </div>      
-        <!--Canvas-->
-        <div class="item3">
-            <table class="tablePlayer">
-                <tr>
-                <td>
-                    <h5 class=""> Player 2 </h5>
-                </td>
-                </tr>
-                <tr>
-                    <td>
-                        <img src="top.png" alt="" class="controller"> jump
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <img src="bottom.jpeg" alt="" class="controller"> duck
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <img src="right.jpg" alt="" class="controller"> Punch
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <img src="D.png" alt="" class="controller"> Retreat
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <div class="item4">
-            <div id="hero-bar">
+                    <div class="life_bar" style="float:right;">
+                        <div id="player02_life" class="life" style="float:right;"></div>
+                    </div>
+                    <br/>
+                    <div class="energy_bar" style="float:left;">
+                        <div id="player01_energy" class="energy"></div>
+                    </div>
+                    <div class="energy_bar" style="float:right;">
+                        <div id="player02_energy" class="energy" style="float:right;"></div>
+                    </div>
+                </div>
+                <div id="wrap">
+                    <div id="player1"></div>
+                    <div id="player2"></div>
+                </div>
             </div>
+            <div class="button2"></div>
         </div>
         <div class="item5">
             <button class="button1">Player 1</button>
@@ -98,7 +40,7 @@
         </div>
     </div>
     <!--Script-->
-        <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="script.js"></script>
     <!--Script-->
 </body>
 </html>
