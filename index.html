@@ -7,18 +7,15 @@
 <body>
     <div class="main-app">
         <div id="overlay" class="overlay hidden">
-<!--            <div class="gameover">START FIGHTING</div>-->
-            <div class="gameover">GAME OVER</div>
+            <div id="playgame"></div>
             <div class="winner">
-                <div class="gameresult tie">It's A Tie!</div>
-                <div class="gameresult p1win">Player 1 Wins!</div>
-                <div class="gameresult p2win">Player 2 Wins!</div>
+                <div id="gameresult"></div>
             </div>
-            <div class="again"><span class="clickable" onClick="startGame()">PLAY AGAIN</span></div>
+            <div id="again"></div>
         </div>
 <!--        <audio id="sound" src="audio/music01.mp3"></audio>-->
         <div class="grid-container">
-            <div class="button1"></div>
+<!--            <div class="button1"></div>-->
             <div id="gameScreen">
                 <div id="info">
                     <div class="player_bar" style="float: left">
@@ -47,22 +44,14 @@
                     <div id="player2"></div>
                 </div>
             </div>
-            <div class="button2"></div>
+<!--            <div class="button2"></div>-->
         </div>
-<<<<<<< HEAD
 
 <!--        <div class="media" style="background-color: #fff7ff">-->
 <!--            <div id="choose_theme" style="align-items: center"> Theme </div>-->
 <!--            <div id="choose_music" style="align-items: center"> Music </div>-->
 <!--        </div>-->
-=======
-        <div class="item5">
-            <button class="button1">Player 1</button>
-        </div>
-        <div class="item6">
-            <button class="button2">Player 2</button>
-        </div>
->>>>>>> 9efc9a4f120120c781b8de44feb3887dba3407f1
+
     </div>
     <!--Script-->
     <script type="text/javascript" src="script.js"></script>
