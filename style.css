@@ -1,3 +1,20 @@
+@font-face {
+    font-family: karma;
+    src: url(font/karma_future.ttf);
+}
+
+@font-face {
+    font-family: pixel;
+    src: url(font/Pixel.ttf);
+}
+
+body{
+    margin: 0 0;
+    padding: 0 0;
+    overflow:hidden;
+    border:none;
+}
+
 .main-app {
     background: black url(image/background_fighter.jpg) no-repeat center center;
     background-size: cover;
@@ -51,8 +68,9 @@
 
 #wrap{
     margin-top: 1%;
+    margin-left: -1px;
     width:800px;
-    height:530px;
+    height:500px;
     background: black url(image/background_rooftop.jpg) no-repeat;
     background-size: cover;
     position:fixed;
@@ -90,13 +108,14 @@
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
     background-color: #1de900;
-    height:15px;
+    height:20px;
 }
 .life_bar{
+    margin-top: -1%;
     border-radius: 4px;
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
-    height:15px;
+    height:20px;
     width:300px;
     border: 1px solid black;
 }
@@ -151,4 +170,47 @@
     -webkit-border-radius: 4px;
     background-color: #1de900;
     height:15px;
+}
+
+/** Overlay **/
+.overlay{
+    position:fixed;
+    height:100vh;
+    width:100%;
+    z-index:10;
+    text-align:center;
+    font-family: karma, serif;
+    color:white;
+
+    -webkit-transition: opacity 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+    -moz-transition: opacity 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+    -o-transition: opacity 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+    transition: opacity 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+
+    background: -webkit-radial-gradient(rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 1%,rgba(0,0,0,0.9) 36%,rgba(0,0,0,0.9) 100%);
+}
+
+.gameover{
+    font-size:7rem;
+    margin-top:30vh;
+}
+
+.again{
+    font-size: 2rem;
+}
+
+.clickable{
+    font-size: 2rem;
+    color:white;
+    text-shadow:2px 2px 2px #FF7899;
+    cursor:pointer;
+}
+
+.clickable:hover{
+    text-shadow:2px 2px 2px red;
+}
+
+.clickable:active{
+    color:#C9C9C9;
+    text-shadow:2px 2px 2px #FF7899;
 }
