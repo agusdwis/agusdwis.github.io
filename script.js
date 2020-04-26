@@ -29,7 +29,18 @@ var punch_fx2 = new Sound("audio/punch_fx2.wav");
 var kick_fx = new Sound("audio/kick_sfx.wav");
 var voice_over = new Sound("audio/voice_over.wav");
 var game_over = new Sound("audio/game_over.wav");
-var battle_fight = new Sound('audio/battle_music.mp3', 1, 0.2);
+var battle_fight = new Sound('audio/battle_music.mp3', 1, 0.1);
+
+// Define Player
+let player01, player02;
+player01_move = (img) => { player01.style.backgroundImage = img; };
+player02_move = (img) => { player02.style.backgroundImage = img; };
+let gameover = 0;
+
+let player01_image = "image/player.png";
+let player02_image = "image/enemy.png";
+
+// END OF VARIABLE
 
 function Sound(src, maxStreams = 5, vol = 1.0) {
     this.streamNum = 0;
@@ -92,15 +103,6 @@ document.onkeyup = function(event) {
     if (key === 'O') kick2 = 0;
 };
 
-// Define Player
-let player01, player02;
-player01_move = (img) => { player01.style.backgroundImage = img; };
-player02_move = (img) => { player02.style.backgroundImage = img; };
-let gameover = 0;
-
-let player01_image = "image/player.png";
-let player02_image = "image/enemy.png";
-
 // restart Game
 function restartGame() {
     voice_over.play();
@@ -136,10 +138,9 @@ function restartGame() {
     startGame();
 }
 
-
 // Main Game
 function startGame() {
-    battle_fight.play();
+    // battle_fight.play();
 
     // Initial Condition
     if (gameover === 1) return;
@@ -314,6 +315,7 @@ function startGame() {
         }
         gameover = 1;
         game_over.play();
+        battle_fight.stop();
         document.getElementById('again').innerHTML = '<span id="clickable" onClick="restartGame()">PLAY AGAIN</span>';
     }
 

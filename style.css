@@ -33,6 +33,10 @@ body{
     grid-template-columns: auto auto auto;
 }
 
+.battle_message {
+    width: 1400px;
+}
+
 .button1 {
     overflow: auto;
     margin-left: -200px;
@@ -44,6 +48,34 @@ body{
     background-color: rgba(192, 192, 192, 0.58);
     border: 1px solid black;
     border-radius: 4px;
+}
+
+.message1 {
+    overflow: auto;
+    float: left;
+    width: 230px;
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 4px;
+    margin-left: 40px;
+    text-align: center;
+    align-items: center;
+    padding-top: 7px;
+    background-color: #FF7899;
+}
+
+.message2 {
+    overflow: auto;
+    float: right;
+    width: 230px;
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 4px;
+    margin-right: 45px;
+    text-align: center;
+    align-items: center;
+    padding-top: 7px;
+    background-color: #FF7899;
 }
 
 .table1 , .table2 {
