@@ -62,6 +62,9 @@ player01_move = (img) => { player01.style.backgroundImage = img; };
 player02_move = (img) => { player02.style.backgroundImage = img; };
 let gameover = 0;
 
+let player01_image = "image/player.png";
+let player02_image = "image/enemy.png";
+
 // Main Game
 function startGame() {
     // Initial Condition
@@ -95,20 +98,20 @@ function startGame() {
     c1 = (c1+1) % hitDamage;
 
     if(hit1 === 1){
-        if(hit1c1 === 1)player01_move("url(playerhit1.png)");
-        else player01_move("url(playerhit2.png)");
+        if(hit1c1 === 1)player01_move(`url${player01_image}`);
+        else player01_move(`url${player01_image}`);
         if(c1 === 0){ hit1 = hit1c1 = hit1c2 = 0;}
     }
     else if(frame === 0) {
-        player01_move("url(player.png)");
+        player01_move(`url${player01_image}`);
     }
     else if(frame === 1) {
-        player01_move("url(player1.png)");
+        player01_move(`url${player01_image}`);
     }
     else if(frame === 2) {
         // k1 = 1;
         player01_energy = player01_energy - damage;
-        player01_move("url(kick.png)");
+        player01_move(`url${player01_image}`);
         if(aside === 1 && isup2 === 0){
             player02_life = player02_life - 20;
             hit2 = 1;
@@ -117,7 +120,7 @@ function startGame() {
     }
     else if(frame === 3) {
         // p1 = 1;
-        player01_move("url(punch.png)");
+        player01_move(`url${player01_image}`);
         player01_energy = player01_energy - damage;
         if( aside === 1 && isdown2 === 0){
             player02_life = player02_life - 20;
@@ -126,11 +129,11 @@ function startGame() {
     }
     else if(frame === 4) {
         // bup1 = 1;
-        player01_move("url(playerup.png)");
+        player01_move(`url${player01_image}`);
         player01.style.marginTop = 200-120;
     }
     else if(frame === 5) {
-        player01_move("url(playerdown.png)");
+        player01_move(`url${player01_image}`);
         player01.style.marginTop = 200 + 20;
     }
 
@@ -171,19 +174,19 @@ function startGame() {
     c2 = (c2 + 1) % hitDamage;
 
     if(hit2 === 1){
-        if(hit2c1 === 1) player02_move("url(enemyhit1.png)");
-        else player02_move("url(enemyhit2.png)");
+        if(hit2c1 === 1) player02_move(`url${player02_image}`);
+        else player02_move(`url${player02_image}`);
         if(c2 === 0){hit2 = hit2c1 = hit2c2 = 0;}
     }
     else if(player2_frame === 0) {
-        player02_move("url(enemy.png)");
+        player02_move(`url${player02_image}`);
     }
     else if(player2_frame === 1) {
-        player02_move("url(enemy1.png)");
+        player02_move(`url${player02_image}`);
     }
     else if(player2_frame === 2) {
         player02_energy = player02_energy - damage;
-        player02_move("url(enemykick.png)");
+        player02_move(`url${player02_image}`);
         if(aside === 1 && isup1 === 0){
             player01_life = player01_life - 20;
             hit1 = 1;
@@ -192,7 +195,7 @@ function startGame() {
     }
     else if(player2_frame === 3) {
         player02_energy = player02_energy - damage;
-        player02_move("url(enemypunch.png)");
+        player02_move(`url${player02_image}`);
         if(aside === 1 && isdown1 === 0){
             player01_life = player01_life - 20;
             hit1 = 1;
@@ -200,19 +203,19 @@ function startGame() {
         }
     }
     else if(player2_frame === 4) {
-        player02_move("url(enemyup.png)");
+        player02_move(`url${player02_image}`);
         player02.style.marginTop = 200-120;
     }
     else if(player2_frame === 5) {
-        player02_move("url(enemydown.png)");
+        player02_move(`url${player02_image}`);
         player02.style.marginTop = 200 + 20;
     }
 
     // Set Health bar & Energy bar
     document.getElementById('player01_life').style.width = player01_life;
     document.getElementById('player02_life').style.width = player02_life;
-    document.getElementById('player01_energy').style.width = (player01_energy <0) ? 0:player01_energy;
-    document.getElementById('player02_energy').style.width = (player02_energy <0) ? 0:player02_energy;
+    document.getElementById('player01_energy').style.width = (player01_energy < 0) ? 0:player01_energy;
+    document.getElementById('player02_energy').style.width = (player02_energy < 0) ? 0:player02_energy;
 
 }
 

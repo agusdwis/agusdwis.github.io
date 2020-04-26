@@ -1,5 +1,5 @@
 .main-app {
-    background: black url(background.jpg) no-repeat center center;
+    background: black url(image/background.jpg) no-repeat center center;
     background-size: cover;
     width: 1340px;
     height:99%;
@@ -64,7 +64,7 @@
     width:168px;
     height:200px;
     background-color:transparent;
-    background-image:url(player.png);
+    background-image:url(image/player.png);
 }
 
 #player2{
@@ -74,7 +74,7 @@
     width:168px;
     height:200px;
     background-color:transparent;
-    background-image:url(enemy.png);
+    background-image:url(image/enemy.png);
 }
 
 #p1, #p2{
