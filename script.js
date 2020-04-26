@@ -4,7 +4,7 @@ let damage = 50;
 let hitDamage = 15;
 const SOUND_ON = true;
 
-var initial_life = 300;
+var initial_life = 3;
 var initial_energy = 300;
 
 // Player 1
@@ -29,6 +29,7 @@ var punch_fx2 = new Sound("audio/punch_fx2.wav");
 var kick_fx = new Sound("audio/kick_sfx.wav");
 var voice_over = new Sound("audio/voice_over.wav");
 var game_over = new Sound("audio/game_over.wav");
+var battle_fight = new Sound('audio/battle_music.mp3', 1, 0.2);
 
 function Sound(src, maxStreams = 5, vol = 1.0) {
     this.streamNum = 0;
@@ -103,6 +104,7 @@ let player02_image = "image/enemy.png";
 // restart Game
 function restartGame() {
     voice_over.play();
+    battle_fight.play();
     gameover = 0;
     document.getElementById('overlay').style.display = "none";
 
@@ -137,6 +139,7 @@ function restartGame() {
 
 // Main Game
 function startGame() {
+    battle_fight.play();
 
     // Initial Condition
     if (gameover === 1) return;

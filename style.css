@@ -41,7 +41,7 @@ body{
     width: 230px;
     height: 420px;
     background-size: 200px;
-    background-color: rgba(255, 255, 255, 0.58);
+    background-color: rgba(192, 192, 192, 0.58);
     border: 1px solid black;
     border-radius: 4px;
 }
@@ -58,7 +58,7 @@ body{
     width: 230px;
     height: 420px;
     background-size: 200px;
-    background-color: rgba(255, 255, 255, 0.58);
+    background-color: rgba(192, 192, 192, 0.58);
     border: 1px solid black;
     border-radius: 4px;
 }
@@ -74,8 +74,8 @@ body{
     margin-left: 4%;
     margin-top: 1%;
     padding-bottom: 2%;
-    background-color: rgba(180, 202, 218, 0.62);
-    border: 1px solid black;
+    background-color: rgba(120, 120, 120, 0.58);
+    border: 1px solid rgba(0, 0, 0, 0.55);
     border-radius: 4px;
 }
 
@@ -156,7 +156,7 @@ body{
     height:20px;
     width:100px;
     border: 1px solid black;
-    background-color: rgba(242, 255, 250, 0.65);
+    background-color: rgba(183, 203, 255, 0.65);
     text-align: center;
     font-weight: bold;
 }
@@ -193,7 +193,7 @@ body{
     -o-transition: opacity 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035);
     transition: opacity 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035);
 
-    background: -webkit-radial-gradient(rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 1%,rgba(0,0,0,0.9) 36%,rgba(0,0,0,0.9) 100%);
+    background: -webkit-radial-gradient(rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.71) 1%, rgba(0, 0, 0, 0.91) 36%, rgba(0, 0, 0, 0.98) 100%);
 }
 
 #playgame{
