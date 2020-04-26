@@ -24,12 +24,13 @@ let up2 = 0,down2 = 0, left2 = 0, right2 = 0, punch2 = 0, kick2 = 0, player2_fra
 let hit2 = 0, c2 = 0, hit2c1 = 0, hit2c2 = 0, isdown2 = 0, isup2 = 0;
 
 // Setup sound effect
-var punch_fx1 = new Audio("audio/punch_fx.wav");
-var punch_fx2 = new Audio("audio/punch_fx2.wav");
-var kick_fx1 = new Audio("audio/kick_fx.ogg");
-var voice_over = new Audio("audio/voice_over.wav");
+var punch_fx1 = new Sound("audio/punch_fx.wav");
+var punch_fx2 = new Sound("audio/punch_fx2.wav");
+var kick_fx = new Sound("audio/kick_sfx.wav");
+var voice_over = new Sound("audio/voice_over.wav");
+var game_over = new Sound("audio/game_over.wav");
 
-let Sound = (src, maxStreams = 1, vol = 1.0) => {
+function Sound(src, maxStreams = 5, vol = 1.0) {
     this.streamNum = 0;
     this.streams = [];
     for (var i = 0; i < maxStreams; i++) {
@@ -48,7 +49,7 @@ let Sound = (src, maxStreams = 1, vol = 1.0) => {
         this.streams[this.streamNum].pause();
         this.streams[this.streamNum].currentTime = 0;
     }
-};
+}
 
 // Keyboard Function on Keydown
 document.onkeydown = function(event) {
@@ -101,6 +102,7 @@ let player02_image = "image/enemy.png";
 
 // restart Game
 function restartGame() {
+    voice_over.play();
     gameover = 0;
     document.getElementById('overlay').style.display = "none";
 
@@ -187,7 +189,7 @@ function startGame() {
             player02_life = player02_life - 20;
             hit2 = 1;
             hit2c2 = 1;
-            kick_fx1.play();
+            kick_fx.play();
         }
     }
     else if(frame === 3) {
@@ -267,6 +269,7 @@ function startGame() {
             player01_life = player01_life - 20;
             hit1 = 1;
             hit1c2 = 1;
+            kick_fx.play();
         }
     }
     else if(player2_frame === 3) {
@@ -307,6 +310,7 @@ function startGame() {
             document.getElementById('gameresult').innerHTML = "Player 1 Wins!";
         }
         gameover = 1;
+        game_over.play();
         document.getElementById('again').innerHTML = '<span id="clickable" onClick="restartGame()">PLAY AGAIN</span>';
     }
 
