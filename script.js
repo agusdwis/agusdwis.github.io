@@ -1,8 +1,9 @@
-// Global variabel
+// GLOBAL VARIABLE
 let WD = 150;
 let damage = 50;
 let hitDamage = 15;
 const SOUND_ON = true;
+let gameover = 0;
 
 var initial_life = 300;
 var initial_energy = 300;
@@ -64,20 +65,25 @@ var game_over = new Sound("audio/game_over.wav");
 var battle_fight = new Sound('audio/battle_music.mp3', 1, 0.1);
 
 // Define Player
-let player01, player02;
-player01_move = (img) => {
-    player01.style.backgroundImage = img;
-}
-player02_move = (img) => {
-    player02.style.backgroundImage = img;
-}
-let gameover = 0;
-
+let player01;
+let player02;
 let player01_image = "image/player.png";
 let player02_image = "image/enemy.png";
 
 // END OF VARIABLE
 
+
+// FUNCTION
+
+// move
+player01_move = (img) => {
+    player01.style.backgroundImage = img;
+};
+player02_move = (img) => {
+    player02.style.backgroundImage = img;
+};
+
+// create sound fx
 function Sound(src, maxStreams = 5, vol = 1.0) {
     this.streamNum = 0;
     this.streams = [];
@@ -154,8 +160,8 @@ document.onkeyup = function (event) {
 };
 
 
-// restart Game
-function restartGame() {
+// Restart Game
+restartGame = () => {
     voice_over.play();
     // battle_fight.play();
     gameover = 0;
@@ -172,7 +178,8 @@ function restartGame() {
 
     // Player 1
     player01_posx = 0, w = 25, d = 200;
-    player01_life = initial_life, player01_energy = initial_energy;
+    player01_life = initial_life;
+    player01_energy = initial_energy;
     up1 = 0, down1 = 0, left1 = 0, right1 = 0, punch1 = 0, kick1 = 0, frame = 0;
 
     // Action 1
@@ -180,7 +187,8 @@ function restartGame() {
 
     // Player 2
     player02_posx = 800 - WD, player02_pos_right = 0, aside = 0;
-    player02_life = initial_life, player02_energy = initial_energy;
+    player02_life = initial_life;
+    player02_energy = initial_energy;
     up2 = 0, down2 = 0, left2 = 0, right2 = 0, punch2 = 0, kick2 = 0, player2_frame = 0;
 
     // Action 2
@@ -188,11 +196,12 @@ function restartGame() {
 
     player01.style.marginLeft = player01_posx;
     player02.style.marginRight = player02_pos_right;
+
     startGame();
-}
+};
 
 // Main Game
-function startGame() {
+startGame = () => {
     // battle_fight.play();
 
     // Initial Condition
@@ -361,7 +370,7 @@ function startGame() {
         document.getElementById('again').innerHTML = '<span id="clickable" onClick="restartGame()">PLAY AGAIN</span>';
     }
 
-}
+};
 
 // Load screen
 window.onload = function () {
