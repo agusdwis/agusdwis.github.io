@@ -341,7 +341,6 @@ body {
 
 .my_table {
   font-weight: bold;
-  visibility: hidden;
 }
 
 .container_music,
@@ -398,4 +397,9 @@ body {
 
 .controller3 {
   background-color: rgba(58, 53, 255, 0.66);
+}
+
+.play_stop_next {
+  height: 20px;
+  width: 60px;
 }

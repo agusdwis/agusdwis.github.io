@@ -141,17 +141,23 @@
         <div class="item-D"></div>
         <div class="item-E">
           <div class="container_music">
-            <div class="controller1" onclick="battle_fight.play()"></div>
+            <div class="controller1" onclick="battle_fight.play()">
+              <img src="./image/music_play.png" alt="" class="play_stop_next" />
+            </div>
             <br />
-            <div class="controller2" onclick="battle_fight.stop()"></div>
+            <div class="controller2" onclick="battle_fight.stop()">
+              <img src="./image/music_stop.png" alt="" class="play_stop_next" />
+            </div>
           </div>
           <div class="container_theme">
             <div class="change_theme">
-              <div
-                id="change_me"
-                class="controller3"
-                onclick="randombg()"
-              ></div>
+              <div id="change_me" class="controller3" onclick="randombg()">
+                <img
+                  src="./image/theme_next.png"
+                  alt=""
+                  class="play_stop_next"
+                />
+              </div>
             </div>
           </div>
         </div>
