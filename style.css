@@ -190,7 +190,7 @@ body {
   width: 168px;
   height: 200px;
   background-color: transparent;
-  background-image: url(image/player1.png);
+  background-image: url(image/PlayerA.png);
 }
 
 #player2 {
@@ -200,7 +200,7 @@ body {
   width: 168px;
   height: 200px;
   background-color: transparent;
-  background-image: url(image/player2.png);
+  background-image: url(image/PlayerB.png);
 }
 
 .item-C {

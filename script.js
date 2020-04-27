@@ -67,8 +67,8 @@ var battle_fight = new Sound("audio/battle_music.mp3", 1, 0.1);
 // Define Player
 let player01;
 let player02;
-let player01_image = "image/player.png";
-let player02_image = "image/enemy.png";
+let player01_image = "image/PlayerA.png";
+let player02_image = "image/PlayerB.png";
 
 // END OF VARIABLE
 
@@ -146,6 +146,7 @@ function Sound(src, maxStreams = 5, vol = 1.0) {
 // stop screen
 const stop_loading = () => {
   document.getElementById('overlay_start').style.display = "none";
+  voice_over.play();
 }
 
 // load screen
@@ -419,10 +420,12 @@ const startGame = () => {
 // Load screen
 window.onload = function () {
   loading_screen();
+  document.getElementsByClassName("console1")[0].style.display = "none";
+  document.getElementsByClassName("console2")[0].style.display = "none";
   document.getElementById("overlay").style.display = "none";
   player01 = document.getElementById("player1");
   player02 = document.getElementById("player2");
-  voice_over.play();
+
   setInterval("startGame();", 100);
 };
 
