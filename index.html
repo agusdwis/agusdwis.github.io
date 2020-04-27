@@ -2,13 +2,18 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="style.css" />
     <script type="text/javascript" src="script.js"></script>
     <title>Fight Me! Game</title>
   </head>
   <body>
     <div id="main-app">
+      <div id="overlay_start">
+        <div id="startgame"></div>
+        <div id="gamestart"></div>
+        <div id="exit"></div>
+      </div>
       <div id="overlay" class="overlay hidden">
         <div id="playgame"></div>
         <div class="winner">
@@ -18,8 +23,8 @@
       </div>
       <div id="main_content">
         <div class="item-A">
-          <div class="button1" onclick="show_button1()">
-            <div class="title_button1">Player 1</div>
+          <div class="button1">
+            <div class="title_button1" onclick="show_button1()">Player 1</div>
             <div class="console1">
               <table class="my_table">
                 <tr>
@@ -61,6 +66,7 @@
                   Player 1
                 </div>
               </div>
+              <!-- <div id="countdown" style="float: inline-start;">AAA</div> -->
               <div class="player_bar" style="float: right;">
                 <div id="player02_name" class="name" style="float: right;">
                   Player 2
@@ -98,14 +104,13 @@
           <div onload="randombg()">
             <div id="wrap">
               <div id="player1"></div>
-              <div id="countdown" class="countdown"></div>
               <div id="player2"></div>
             </div>
           </div>
         </div>
         <div class="item-C">
-          <div class="button2" onclick="show_button2()">
-            <div class="title_button2">Player 2</div>
+          <div class="button2">
+            <div class="title_button2" onclick="show_button2()">Player 2</div>
             <div class="console2">
               <table class="my_table" id="table">
                 <tr>

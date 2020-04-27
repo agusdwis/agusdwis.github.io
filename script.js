@@ -67,8 +67,8 @@ var battle_fight = new Sound("audio/battle_music.mp3", 1, 0.1);
 // Define Player
 let player01;
 let player02;
-let player01_image = "image/player.png";
-let player02_image = "image/enemy.png";
+let player01_image = "image/PlayerA.png";
+let player02_image = "image/PlayerB.png";
 
 // END OF VARIABLE
 
@@ -143,6 +143,23 @@ function Sound(src, maxStreams = 5, vol = 1.0) {
   };
 }
 
+// stop screen
+const stop_loading = () => {
+  document.getElementById('overlay_start').style.display = "none";
+  voice_over.play();
+}
+
+// load screen
+const loading_screen = () => {
+  document.getElementById('overlay_start').style.display = "block";
+  document.getElementById("startgame").innerHTML = "START GAME!";
+  // document.getElementById("gamestart").innerHTML = "Click to Start!";
+
+  document.getElementById("exit").innerHTML =
+    '<span id="letsgo" onClick="stop_loading();">Click to Continue</span>';
+}
+
+// change arena
 const randombg = () => {
   var random = Math.floor(Math.random() * 9) + 0;
   var bigSize = [
@@ -159,6 +176,7 @@ const randombg = () => {
   document.getElementById("wrap").style.backgroundImage = bigSize[random];
 };
 
+// dropdown button
 const show_button1 = () => {
   var x = document.getElementsByClassName("console1")[0];
   if (x.style.display === "none") {
@@ -186,7 +204,7 @@ const restartGame = () => {
   // document.getElementsByClassName('message1').innerHTML = "";
   // document.getElementsByClassName('message2').innerHTML = "";
 
-  WD = 168;
+  WD = 150;
   damage = 50;
   hitDamage = 15;
 
@@ -198,12 +216,12 @@ const restartGame = () => {
   player01_life = initial_life;
   player01_energy = initial_energy;
   (up1 = 0),
-    (down1 = 0),
-    (left1 = 0),
-    (right1 = 0),
-    (punch1 = 0),
-    (kick1 = 0),
-    (frame = 0);
+  (down1 = 0),
+  (left1 = 0),
+  (right1 = 0),
+  (punch1 = 0),
+  (kick1 = 0),
+  (frame = 0);
 
   // Action 1
   (hit1 = 0), (c1 = 0), (hit1c1 = 0), (hit1c2 = 0), (isdown1 = 0), (isup1 = 0);
@@ -213,12 +231,12 @@ const restartGame = () => {
   player02_life = initial_life;
   player02_energy = initial_energy;
   (up2 = 0),
-    (down2 = 0),
-    (left2 = 0),
-    (right2 = 0),
-    (punch2 = 0),
-    (kick2 = 0),
-    (player2_frame = 0);
+  (down2 = 0),
+  (left2 = 0),
+  (right2 = 0),
+  (punch2 = 0),
+  (kick2 = 0),
+  (player2_frame = 0);
 
   // Action 2
   (hit2 = 0), (c2 = 0), (hit2c1 = 0), (hit2c2 = 0), (isdown2 = 0), (isup2 = 0);
@@ -285,7 +303,6 @@ const startGame = () => {
       player02_life = player02_life - 20;
       hit2 = 1;
       hit2c2 = 1;
-      // document.getElementsByClassName('message1').innerHTML = "Ulululululul...";
       kick_fx.play();
     }
   } else if (frame === 3) {
@@ -295,7 +312,6 @@ const startGame = () => {
       player02_life = player02_life - 20;
       hit2 = 1;
       hit2c1 = 1;
-      // document.getElementsByClassName('message1').innerHTML = "Tendangan Macan!!";
       punch_fx1.play();
     }
   } else if (frame === 4) {
@@ -356,7 +372,6 @@ const startGame = () => {
       player01_life = player01_life - 20;
       hit1 = 1;
       hit1c2 = 1;
-      // document.getElementsByClassName('message2').innerHTML = "Maman tuh tinju...";
       kick_fx.play();
     }
   } else if (player2_frame === 3) {
@@ -366,7 +381,6 @@ const startGame = () => {
       player01_life = player01_life - 20;
       hit1 = 1;
       hit1c1 = 1;
-      // document.getElementsByClassName('message2').innerHTML = "Sakit Ga bro??";
       punch_fx2.play();
     }
   } else if (player2_frame === 4) {
@@ -405,75 +419,24 @@ const startGame = () => {
 
 // Load screen
 window.onload = function () {
+  loading_screen();
+  document.getElementsByClassName("console1")[0].style.display = "none";
+  document.getElementsByClassName("console2")[0].style.display = "none";
   document.getElementById("overlay").style.display = "none";
   player01 = document.getElementById("player1");
   player02 = document.getElementById("player2");
-  voice_over.play();
+
   setInterval("startGame();", 100);
 };
 
-// show table
-
-// function showTable() {
-//   document.getElementById("table").style.visibility = "visible";
-// }
-// function hideTable() {
-//   document.getElementById("table").style.visibility = "hidden";
-// }
-
-//timer countdown
-// var timeleft = 10;
-//   var downloadTimer = setInterval(function () {
-//     if (timeleft <= 0) {
-//       clearInterval(downloadTimer);
-//     }
-//     document.getElementById("progressBar").value = 10 - timeleft;
-//     timeleft -= 1;
-//   }, 1000);
-
 //alternative time countdown
-var timeleft = 3;
-var downloadTimer = setInterval(function () {
-  if (timeleft <= 0) {
-    clearInterval(downloadTimer);
-    document.getElementById("countdown").innerHTML = "Start";
-  } else {
-    document.getElementById("countdown").innerHTML = timeleft;
-  }
-  timeleft -= 1;
-}, 1000);
-
-//timer game
-// function Timer(min, sec, speedTime) {
-//     window.onload = function() {
-//         var minutes = min;
-//         var second = sec;
-//         var myInterval = setInterval(function() {
-//             document.getElementById("timer").innerHTML = minutes + " : " + second;
-//             second--;
-//             if (second == -1) {
-//                 minutes--;
-//                 second = 60;
-//                 if (minutes == -1) {
-//                     clearInterval(myInterval);
-//                     alert("Maling Menang")
-//                 }
-//             } else if (second == 0 || second == 30) {
-//                 for (num = 0; num < listRandomI.length; num++) {
-//                     var j = listRandomJ[num]
-//                     var i = listRandomI[num]
-//                     var warna = ["black", "grey", "grey"]
-//                     random_warna = warna[Math.floor(Math.random() * warna.length)]
-//                     var change = document.getElementById(c-${j}-b-${i});
-//                     change.style["background-color"] = random_warna;
-//                     if (random_warna === "black") {
-//                         change.className = "wall";
-//                     } else if (random_warna === "grey") {
-//                         change.className = "street";
-//                     }
-//                 }
-//             }
-//         }, speedTime);
-//     }
-// }
-// Timer(10, 60, 250)
+// var timeleft = 3;
+// var downloadTimer = setInterval(function () {
+//   if (timeleft <= 0) {
+//     clearInterval(downloadTimer);
+//     document.getElementById("countdown").innerHTML = "Start";
+//   } else {
+//     document.getElementById("countdown").innerHTML = timeleft;
+//   }
+//   timeleft -= 1;
+// }, 1000);
