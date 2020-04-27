@@ -1,125 +1,156 @@
+<!-- <!DOCTYPE html> -->
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <title>Fight Me!!</title>
+    <script type="text/javascript" src="script.js"></script>
+    <title>Fight Me!</title>
 </head>
 <body>
-    <div class="main-app">
-        <div id="overlay" class="overlay hidden">
-            <div id="playgame"></div>
-            <div class="winner">
-                <div id="gameresult"></div>
-            </div>
-            <div id="again"></div>
+<div id="main-app">
+    <div id="overlay" class="overlay hidden">
+        <div id="playgame"></div>
+        <div class="winner">
+            <div id="gameresult"></div>
         </div>
-<!--        <audio id="sound" src="audio/music01.mp3"></audio>-->
-        <div class="grid-container">
+        <div id="again"></div>
+    </div>
+    <div id="main_content">
+        <div class="item-A">
             <div class="button1">
-                <table>
-                    <tr>
-                        <td class="table1" style="font-weight: bold"> Player 1 Button </td>
-                    </tr>
-                    <tr >
-                        <td> <img src="image/w.png" alt=""> </td>
-                        <td ><span class="alphaBut">: Jump</span></td>
-                    </tr>
-                    <tr>
-                        <td > <img src="image/a.png" alt=""></td>
-                        <td ><span class="alphaBut">: Backward</span></td>
-                    </tr>
-                    <tr>
-                        <td > <img src="image/s.png" alt=""></td>
-                        <td ><span class="alphaBut">: Duck</span></td>
-                    </tr>
-                    <tr>
-                        <td > <img src="image/d.png" alt=""></td>
-                        <td ><span class="alphaBut">: Forward</span></td>
-                    </tr>
-                    <tr>
-                        <td > <img src="image/q.png" alt=""></td>
-                        <td ><span class="alphaBut">: Punch</span></td>
-                    </tr>
-                    <tr>
-                        <td > <img src="image/e.png" alt=""></td>
-                        <td ><span class="alphaBut">: Kick</span></td>
-                    </tr>
-                </table>
+                <div class="title_button1">Player 1</div>
+                <div class="console1">
+                    <table class="my_table">
+                        <tr>
+                            <td class="table1" style="font-weight: bold;"></td>
+                        </tr>
+                        <tr>
+                            <td><img src="image/w.png" alt="" /></td>
+                            <td><span class="alphaBut">: Jump</span></td>
+                        </tr>
+                        <tr>
+                            <td><img src="image/a.png" alt="" /></td>
+                            <td><span class="alphaBut">: Backward</span></td>
+                        </tr>
+                        <tr>
+                            <td><img src="image/s.png" alt="" /></td>
+                            <td><span class="alphaBut">: Duck</span></td>
+                        </tr>
+                        <tr>
+                            <td><img src="image/d.png" alt="" /></td>
+                            <td><span class="alphaBut">: Forward</span></td>
+                        </tr>
+                        <tr>
+                            <td><img src="image/q.png" alt="" /></td>
+                            <td><span class="alphaBut">: Punch</span></td>
+                        </tr>
+                        <tr>
+                            <td><img src="image/e.png" alt="" /></td>
+                            <td><span class="alphaBut">: Kick</span></td>
+                        </tr>
+                    </table>
+                </div>
             </div>
-            <div id="gameScreen">
-                <div id="info">
-                    <div class="player_bar" style="float: left">
-                        <div id="player01_name" class="name" style="float: left;">Player 1</div>
+        </div>
+        <div id="gameScreen" style="display: inline-block;">
+            <div id="info">
+                <div class="player_name">
+                    <div class="player_bar" style="float: left;">
+                        <div id="player01_name" class="name" style="float: left;">
+                            Player 1
+                        </div>
                     </div>
-                    <div class="player_bar" style="float: right">
-                        <div id="player02_name" class="name" style="float: right;">Player 2</div>
+                    <div class="player_bar" style="float: right;">
+                        <div id="player02_name" class="name" style="float: right;">
+                            Player 2
+                        </div>
                     </div>
-                    <br/><br/>
-                    <div class="life_bar" style="float:left;">
+                    <br />
+                </div>
+                <div class="life_bar_main">
+                    <div class="life_bar" style="float: left;">
                         <div id="player01_life" class="life"></div>
                     </div>
-                    <div class="life_bar" style="float:right;">
-                        <div id="player02_life" class="life" style="float:right;"></div>
+                    <div class="life_bar" style="float: right;">
+                        <div
+                                id="player02_life"
+                                class="life"
+                                style="float: right;"
+                        ></div>
                     </div>
-                    <br/>
-                    <div class="energy_bar" style="float:left;">
+                    <br />
+                </div>
+                <div class="energy_bar_main">
+                    <div class="energy_bar" style="float: left;">
                         <div id="player01_energy" class="energy"></div>
                     </div>
-                    <div class="energy_bar" style="float:right;">
-                        <div id="player02_energy" class="energy" style="float:right;"></div>
+                    <div class="energy_bar" style="float: right;">
+                        <div
+                                id="player02_energy"
+                                class="energy"
+                                style="float: right;"
+                        ></div>
                     </div>
-                </div>
-                <div id="wrap">
-                    <div id="player1"></div>
-                    <div id="player2"></div>
+                    <br />
                 </div>
             </div>
+            <div id="wrap">
+                <div id="player1"></div>
+                <div id="player2"></div>
+            </div>
+        </div>
+        <div class="item-C">
             <div class="button2">
-                <table>
-                    <tr>
-                        <td class="table2" style="font-weight: bold"> Player 2 Button </td>
-                    </tr>
-                    <tr >
-                        <td> <img src="image/i.png" alt=""> </td>
-                        <td ><span class="alphaBut">: Jump</span></td>
-                    </tr>
-                    <tr>
-                        <td > <img src="image/j.png" alt=""></td>
-                        <td ><span class="alphaBut">: Backward</span></td>
-                    </tr>
-                    <tr>
-                        <td > <img src="image/K.png" alt=""></td>
-                        <td ><span class="alphaBut">: Duck</span></td>
-                    </tr>
-                    <tr>
-                        <td > <img src="image/l.png" alt=""></td>
-                        <td ><span class="alphaBut">: Forward</span></td>
-                    </tr>
-                    <tr>
-                        <td > <img src="image/u.png" alt=""></td>
-                        <td ><span class="alphaBut">: Punch</span></td>
-                    </tr>
-                    <tr>
-                        <td > <img src="image/o.png" alt=""></td>
-                        <td ><span class="alphaBut">: Kick</span></td>
-                    </tr>
-                </table>
+                <div class="title_button2">Player 2</div>
+                <div class="console2">
+                    <table class="my_table">
+                        <tr>
+                            <td class="table2" style="font-weight: bold;"></td>
+                        </tr>
+                        <tr>
+                            <td><img src="image/i.png" alt="" /></td>
+                            <td><span class="alphaBut">: Jump</span></td>
+                        </tr>
+                        <tr>
+                            <td><img src="image/j.png" alt="" /></td>
+                            <td><span class="alphaBut">: Backward</span></td>
+                        </tr>
+                        <tr>
+                            <td><img src="image/K.png" alt="" /></td>
+                            <td><span class="alphaBut">: Duck</span></td>
+                        </tr>
+                        <tr>
+                            <td><img src="image/l.png" alt="" /></td>
+                            <td><span class="alphaBut">: Forward</span></td>
+                        </tr>
+                        <tr>
+                            <td><img src="image/u.png" alt="" /></td>
+                            <td><span class="alphaBut">: Punch</span></td>
+                        </tr>
+                        <tr>
+                            <td><img src="image/o.png" alt="" /></td>
+                            <td><span class="alphaBut">: Kick</span></td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
-        <br>
-        <div class="battle_message">
-            <div class="message1" style="float: left"></div>
-            <div class="message2" style="float: right"></div>
+        <div class="item-D"></div>
+        <div class="item-E">
+            <div class="container_music">
+                <div class="controller1" onclick="battle_fight.play()"></div>
+                <br />
+                <div class="controller2" onclick="battle_fight.stop()"></div>
+            </div>
+            <div class="container_theme">
+                <div class="change_theme">
+                    <div id="change_me" class="controller3"></div>
+                </div>
+            </div>
         </div>
-
-<!--        <div class="media" style="background-color: #fff7ff">-->
-<!--            <div id="choose_theme" style="align-items: center"> Theme </div>-->
-<!--            <div id="choose_music" style="align-items: center"> Music </div>-->
-<!--        </div>-->
-
+        <div class="item-F"></div>
     </div>
-    <!--Script-->
-    <script type="text/javascript" src="script.js"></script>
-    <!--Script-->
+</div>
 </body>
 </html>
