@@ -227,7 +227,6 @@ restartGame = () => {
 // Main Game
 startGame = () => {
   // battle_fight.play();
-
   // Initial Condition
   if (gameover === 1) return;
   player01_energy = player01_energy + (player01_energy + 2 > 300 ? 0 : 2);
@@ -406,4 +405,59 @@ window.onload = function () {
   player02 = document.getElementById("player2");
   voice_over.play();
   setInterval("startGame();", 100);
+};
+
+// show table
+
+// function showTable() {
+//   document.getElementById("table").style.visibility = "visible";
+// }
+// function hideTable() {
+//   document.getElementById("table").style.visibility = "hidden";
+// }
+
+//timer countdown
+// var timeleft = 10;
+//   var downloadTimer = setInterval(function () {
+//     if (timeleft <= 0) {
+//       clearInterval(downloadTimer);
+//     }
+//     document.getElementById("progressBar").value = 10 - timeleft;
+//     timeleft -= 1;
+//   }, 1000);
+
+//timer game
+// function Timer(min, sec, speedTime) {
+//     window.onload = function() {
+//         var minutes = min;
+//         var second = sec;
+//         var myInterval = setInterval(function() {
+//             document.getElementById("timer").innerHTML = minutes + " : " + second;
+//             second--;
+//             if (second == -1) {
+//                 minutes--;
+//                 second = 60;
+//                 if (minutes == -1) {
+//                     clearInterval(myInterval);
+//                     alert("Maling Menang")
+//                 }
+//             } else if (second == 0 || second == 30) {
+//                 for (num = 0; num < listRandomI.length; num++) {
+//                     var j = listRandomJ[num]
+//                     var i = listRandomI[num]
+//                     var warna = ["black", "grey", "grey"]
+//                     random_warna = warna[Math.floor(Math.random() * warna.length)]
+//                     var change = document.getElementById(c-${j}-b-${i});
+//                     change.style["background-color"] = random_warna;
+//                     if (random_warna === "black") {
+//                         change.className = "wall";
+//                     } else if (random_warna === "grey") {
+//                         change.className = "street";
+//                     }
+//                 }
+//             }
+//         }, speedTime);
+//     }
+// }
+// Timer(10, 60, 250)
 };
