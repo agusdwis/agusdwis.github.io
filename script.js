@@ -114,10 +114,10 @@ document.onkeyup = function (event) {
 };
 
 // move
-player01_move = (img) => {
+const player01_move = (img) => {
   player01.style.backgroundImage = img;
 };
-player02_move = (img) => {
+const player02_move = (img) => {
   player02.style.backgroundImage = img;
 };
 
@@ -143,20 +143,7 @@ function Sound(src, maxStreams = 5, vol = 1.0) {
   };
 }
 
-// Change theme
-// var wrapImage = document.getElementById('change_me'), index = 1,
-// className = ['imageOne', 'imageTwo', 'imageThree', 'imageFour'];
-//
-// function updateIndex() {
-//     index = ++index % className.length;
-// }
-//
-// wrapImage.addEventListener('click', function(e) {
-//     e.currentTarget.className = className[index];
-//     updateIndex();
-// });
-
-randombg = () => {
+const randombg = () => {
   var random = Math.floor(Math.random() * 9) + 0;
   var bigSize = [
     "url(image/background_fighter.jpg)",
@@ -172,8 +159,26 @@ randombg = () => {
   document.getElementById("wrap").style.backgroundImage = bigSize[random];
 };
 
+const show_button1 = () => {
+  var x = document.getElementsByClassName("console1")[0];
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+const show_button2 = () => {
+  var x = document.getElementsByClassName("console2")[0];
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
 // Restart Game
-restartGame = () => {
+const restartGame = () => {
   voice_over.play();
   // battle_fight.play();
   gameover = 0;
@@ -225,7 +230,7 @@ restartGame = () => {
 };
 
 // Main Game
-startGame = () => {
+const startGame = () => {
   // battle_fight.play();
   // Initial Condition
   if (gameover === 1) return;
