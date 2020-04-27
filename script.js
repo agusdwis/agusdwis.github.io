@@ -431,6 +431,18 @@ window.onload = function () {
 //     timeleft -= 1;
 //   }, 1000);
 
+//alternative time countdown
+var timeleft = 3;
+var downloadTimer = setInterval(function () {
+  if (timeleft <= 0) {
+    clearInterval(downloadTimer);
+    document.getElementById("countdown").innerHTML = "Start";
+  } else {
+    document.getElementById("countdown").innerHTML = timeleft;
+  }
+  timeleft -= 1;
+}, 1000);
+
 //timer game
 // function Timer(min, sec, speedTime) {
 //     window.onload = function() {
