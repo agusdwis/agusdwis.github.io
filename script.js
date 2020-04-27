@@ -178,7 +178,7 @@ const show_button2 = () => {
 }
 
 // Restart Game
-restartGame = () => {
+const restartGame = () => {
   voice_over.play();
   // battle_fight.play();
   gameover = 0;
@@ -230,7 +230,7 @@ restartGame = () => {
 };
 
 // Main Game
-startGame = () => {
+const startGame = () => {
   // battle_fight.play();
 
   // Initial Condition
