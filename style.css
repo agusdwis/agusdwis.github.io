@@ -1,3 +1,12 @@
+@keyframes animate {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100% 0;
+  }
+}
+
 @font-face {
   font-family: karma;
   src: url(font/karma_future.ttf);
@@ -163,13 +172,16 @@ body {
   width: 865px;
   height: 490px;
   position: fixed;
-  /* border: 1px solid black; */
   border-radius: 4px;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   background: black url(image/background_rooftop.jpg) no-repeat;
   background-size: 100px;
   background-size: cover;
+  animation-iteration-count: 2;
+  animation-direction: alternate;
+  animation-duration: 10s;
+  animation-name: animate;
 }
 
 #player1 {

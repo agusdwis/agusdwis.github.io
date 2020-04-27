@@ -143,10 +143,12 @@ function Sound(src, maxStreams = 5, vol = 1.0) {
   };
 }
 
+// stop screen
 const stop_loading = () => {
   document.getElementById('overlay_start').style.display = "none";
 }
 
+// load screen
 const loading_screen = () => {
   document.getElementById('overlay_start').style.display = "block";
   document.getElementById("startgame").innerHTML = "START GAME!";
@@ -154,10 +156,9 @@ const loading_screen = () => {
 
   document.getElementById("exit").innerHTML =
     '<span id="letsgo" onClick="stop_loading();">Click to Continue</span>';
-
-
 }
 
+// change arena
 const randombg = () => {
   var random = Math.floor(Math.random() * 9) + 0;
   var bigSize = [
@@ -174,6 +175,7 @@ const randombg = () => {
   document.getElementById("wrap").style.backgroundImage = bigSize[random];
 };
 
+// dropdown button
 const show_button1 = () => {
   var x = document.getElementsByClassName("console1")[0];
   if (x.style.display === "none") {
