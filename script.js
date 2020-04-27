@@ -286,13 +286,13 @@ const startGame = () => {
   c1 = (c1 + 1) % hitDamage;
 
   if (hit1 === 1) {
-    if (hit1c1 === 1) player01_move(`url${player01_image}`);
-    else player01_move(`url${player01_image}`);
+    if (hit1c1 === 1) player01_move("url(image/PlayerA_punched.png)");
+    else player01_move("url(image/PlayerA_kicked.png)");
     if (c1 === 0) {
       hit1 = hit1c1 = hit1c2 = 0;
     }
   } else if (frame === 0) {
-    player01_move(`url${player01_image}`);
+    player01_move("url(image/PlayerA.png)");
   } else if (frame === 1) {
     player01_move(`url${player01_image}`);
   } else if (frame === 2) {
@@ -356,13 +356,13 @@ const startGame = () => {
   c2 = (c2 + 1) % hitDamage;
 
   if (hit2 === 1) {
-    if (hit2c1 === 1) player02_move(`url${player02_image}`);
-    else player02_move(`url${player02_image}`);
+    if (hit2c1 === 1) player02_move("url(image/PlayerB_punched.png)");
+    else player02_move("url(image/PlayerB_kicked.png)");
     if (c2 === 0) {
       hit2 = hit2c1 = hit2c2 = 0;
     }
   } else if (player2_frame === 0) {
-    player02_move(`url${player02_image}`);
+    player02_move("url(image/PlayerB.png)");
   } else if (player2_frame === 1) {
     player02_move(`url${player02_image}`);
   } else if (player2_frame === 2) {
