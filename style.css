@@ -17,7 +17,7 @@ body {
 
 .main-app {
   /* background: black url(image/background_fighter.jpg) no-repeat center center; */
-  background-image: url(image/background_fighter.jpg);
+  background-image: url(image/background_base.jpg);
   background-size: cover;
   width: 1500px;
   height: 99%;
@@ -28,25 +28,12 @@ body {
   position: fixed;
 }
 
-#main-app.imageOne {
-  background-image: url(image/background_fighter.jpg);
-}
-#main-app.imageTwo {
-  background-image: url(image/background_assasin.jpg);
-}
-#main-app.imageThree {
-  background-image: url(image/background_sahara.jpg);
-}
-#main-app.imageFour {
-  background-image: url(image/background_rooftop.jpg);
-}
-
 #main_content {
   display: grid;
   grid-template-columns: 100px 150px auto 150px 100px;
   grid-template-rows: 25% 400px 120px auto;
 
-  background: black url(image/background_fighter.jpg) no-repeat center center;
+  background: black url(image/background_base.jpg) no-repeat center center;
   background-size: cover;
   width: 1366px;
   height: 100%;
@@ -325,13 +312,14 @@ body {
   background-size: 200px;
   background-color: rgba(31, 147, 174, 0.84);
   border: 2px solid rgba(122, 15, 16, 0.34);
-  border-radius: 4px;
+  border-radius: 20px;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: bold;
   font-family: karma, serif;
+  color: black;
 }
 
 .console1,
