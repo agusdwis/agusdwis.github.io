@@ -16,7 +16,8 @@ body {
 }
 
 .main-app {
-  background: black url(image/background_fighter.jpg) no-repeat center center;
+  /* background: black url(image/background_fighter.jpg) no-repeat center center; */
+  background-image: url(image/background_fighter.jpg);
   background-size: cover;
   width: 1500px;
   height: 99%;
