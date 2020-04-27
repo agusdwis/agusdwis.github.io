@@ -143,19 +143,6 @@ function Sound(src, maxStreams = 5, vol = 1.0) {
   };
 }
 
-// Change theme
-// var wrapImage = document.getElementById('change_me'), index = 1,
-// className = ['imageOne', 'imageTwo', 'imageThree', 'imageFour'];
-//
-// function updateIndex() {
-//     index = ++index % className.length;
-// }
-//
-// wrapImage.addEventListener('click', function(e) {
-//     e.currentTarget.className = className[index];
-//     updateIndex();
-// });
-
 randombg = () => {
   var random = Math.floor(Math.random() * 9) + 0;
   var bigSize = [
@@ -170,6 +157,24 @@ randombg = () => {
     "url(image/background_sabaody.jpg)",
   ];
   document.getElementById("wrap").style.backgroundImage = bigSize[random];
+}
+
+show_button1 = () => {
+  var x = document.getElementsByClassName("console1")[0];
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+show_button2 = () => {
+  var x = document.getElementsByClassName("console2")[0];
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
 }
 
 // Restart Game
