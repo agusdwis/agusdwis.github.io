@@ -73,6 +73,45 @@ let player02_image = "image/enemy.png";
 // END OF VARIABLE
 
 // FUNCTION
+// Keyboard Function on Keydown
+document.onkeydown = function (event) {
+  let key = String.fromCharCode(event.keyCode);
+  // Player 1
+  if (key === "W") up1 = 1;
+  if (key === "S") down1 = 1;
+  if (key === "A") left1 = 1;
+  if (key === "D") right1 = 1;
+  if (key === "Q") punch1 = 1;
+  if (key === "E") kick1 = 1;
+
+  // Player 2
+  if (key === "I") up2 = 1;
+  if (key === "K") down2 = 1;
+  if (key === "J") left2 = 1;
+  if (key === "L") right2 = 1;
+  if (key === "U") punch2 = 1;
+  if (key === "O") kick2 = 1;
+};
+
+// Keyboard Function on Keyup
+document.onkeyup = function (event) {
+  let key = String.fromCharCode(event.keyCode);
+  // Player 1
+  if (key === "W") up1 = 0;
+  if (key === "S") down1 = 0;
+  if (key === "A") left1 = 0;
+  if (key === "D") right1 = 0;
+  if (key === "Q") punch1 = 0;
+  if (key === "E") kick1 = 0;
+
+  // Player 2
+  if (key === "I") up2 = 0;
+  if (key === "K") down2 = 0;
+  if (key === "J") left2 = 0;
+  if (key === "L") right2 = 0;
+  if (key === "U") punch2 = 0;
+  if (key === "O") kick2 = 0;
+};
 
 // move
 player01_move = (img) => {
@@ -117,45 +156,21 @@ function Sound(src, maxStreams = 5, vol = 1.0) {
 //     updateIndex();
 // });
 
-// Keyboard Function on Keydown
-document.onkeydown = function (event) {
-  let key = String.fromCharCode(event.keyCode);
-  // Player 1
-  if (key === "W") up1 = 1;
-  if (key === "S") down1 = 1;
-  if (key === "A") left1 = 1;
-  if (key === "D") right1 = 1;
-  if (key === "Q") punch1 = 1;
-  if (key === "E") kick1 = 1;
-
-  // Player 2
-  if (key === "I") up2 = 1;
-  if (key === "K") down2 = 1;
-  if (key === "J") left2 = 1;
-  if (key === "L") right2 = 1;
-  if (key === "U") punch2 = 1;
-  if (key === "O") kick2 = 1;
-};
-
-// Keyboard Function on Keyup
-document.onkeyup = function (event) {
-  let key = String.fromCharCode(event.keyCode);
-  // Player 1
-  if (key === "W") up1 = 0;
-  if (key === "S") down1 = 0;
-  if (key === "A") left1 = 0;
-  if (key === "D") right1 = 0;
-  if (key === "Q") punch1 = 0;
-  if (key === "E") kick1 = 0;
-
-  // Player 2
-  if (key === "I") up2 = 0;
-  if (key === "K") down2 = 0;
-  if (key === "J") left2 = 0;
-  if (key === "L") right2 = 0;
-  if (key === "U") punch2 = 0;
-  if (key === "O") kick2 = 0;
-};
+randombg = () => {
+  var random = Math.floor(Math.random() * 9) + 0;
+  var bigSize = [
+    "url(image/background_fighter.jpg)",
+    "url(image/background_assasin.jpg)",
+    "url(image/background_sahara.jpg)",
+    "url(image/background_rooftop.jpg)",
+    "url(image/background_desert.jpeg)",
+    "url(image/background_konoha.jpg)",
+    "url(image/background_lava.jpg)",
+    "url(image/background_marineford.png)",
+    "url(image/background_sabaody.jpg)",
+  ];
+  document.getElementById("wrap").style.backgroundImage = bigSize[random];
+}
 
 // Restart Game
 restartGame = () => {
@@ -178,12 +193,12 @@ restartGame = () => {
   player01_life = initial_life;
   player01_energy = initial_energy;
   (up1 = 0),
-    (down1 = 0),
-    (left1 = 0),
-    (right1 = 0),
-    (punch1 = 0),
-    (kick1 = 0),
-    (frame = 0);
+  (down1 = 0),
+  (left1 = 0),
+  (right1 = 0),
+  (punch1 = 0),
+  (kick1 = 0),
+  (frame = 0);
 
   // Action 1
   (hit1 = 0), (c1 = 0), (hit1c1 = 0), (hit1c2 = 0), (isdown1 = 0), (isup1 = 0);
@@ -193,12 +208,12 @@ restartGame = () => {
   player02_life = initial_life;
   player02_energy = initial_energy;
   (up2 = 0),
-    (down2 = 0),
-    (left2 = 0),
-    (right2 = 0),
-    (punch2 = 0),
-    (kick2 = 0),
-    (player2_frame = 0);
+  (down2 = 0),
+  (left2 = 0),
+  (right2 = 0),
+  (punch2 = 0),
+  (kick2 = 0),
+  (player2_frame = 0);
 
   // Action 2
   (hit2 = 0), (c2 = 0), (hit2c1 = 0), (hit2c2 = 0), (isdown2 = 0), (isup2 = 0);
@@ -392,23 +407,6 @@ window.onload = function () {
   setInterval("startGame();", 100);
 };
 
-// random wrap
-function randombg() {
-  var random = Math.floor(Math.random() * 9) + 0;
-  var bigSize = [
-    "url(image/background_fighter.jpg)",
-    "url(image/background_assasin.jpg)",
-    "url(image/background_sahara.jpg)",
-    "url(image/background_rooftop.jpg)",
-    "url(image/background_desert.jpeg)",
-    "url(image/background_konoha.jpg)",
-    "url(image/background_lava.jpg)",
-    "url(image/background_marineford.png)",
-    "url(image/background_sabaody.jpg)",
-  ];
-  document.getElementById("wrap").style.backgroundImage = bigSize[random];
-}
-
 // show table
 
 // function showTable() {
@@ -462,3 +460,4 @@ function randombg() {
 //     }
 // }
 // Timer(10, 60, 250)
+};
