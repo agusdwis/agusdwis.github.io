@@ -170,7 +170,7 @@ randombg = () => {
     "url(image/background_sabaody.jpg)",
   ];
   document.getElementById("wrap").style.backgroundImage = bigSize[random];
-}
+};
 
 // Restart Game
 restartGame = () => {
@@ -193,12 +193,12 @@ restartGame = () => {
   player01_life = initial_life;
   player01_energy = initial_energy;
   (up1 = 0),
-  (down1 = 0),
-  (left1 = 0),
-  (right1 = 0),
-  (punch1 = 0),
-  (kick1 = 0),
-  (frame = 0);
+    (down1 = 0),
+    (left1 = 0),
+    (right1 = 0),
+    (punch1 = 0),
+    (kick1 = 0),
+    (frame = 0);
 
   // Action 1
   (hit1 = 0), (c1 = 0), (hit1c1 = 0), (hit1c2 = 0), (isdown1 = 0), (isup1 = 0);
@@ -208,12 +208,12 @@ restartGame = () => {
   player02_life = initial_life;
   player02_energy = initial_energy;
   (up2 = 0),
-  (down2 = 0),
-  (left2 = 0),
-  (right2 = 0),
-  (punch2 = 0),
-  (kick2 = 0),
-  (player2_frame = 0);
+    (down2 = 0),
+    (left2 = 0),
+    (right2 = 0),
+    (punch2 = 0),
+    (kick2 = 0),
+    (player2_frame = 0);
 
   // Action 2
   (hit2 = 0), (c2 = 0), (hit2c1 = 0), (hit2c2 = 0), (isdown2 = 0), (isup2 = 0);
@@ -460,4 +460,3 @@ window.onload = function () {
 //     }
 // }
 // Timer(10, 60, 250)
-};

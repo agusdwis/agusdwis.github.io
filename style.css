@@ -341,6 +341,7 @@ body {
 
 .my_table {
   font-weight: bold;
+  visibility: hidden;
 }
 
 .container_music,
