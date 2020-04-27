@@ -409,3 +409,9 @@ body {
   height: 20px;
   width: 20px;
 }
+.countdown {
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+  justify-content: center;
+}
