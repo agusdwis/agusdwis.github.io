@@ -398,3 +398,14 @@ body {
 .controller3 {
   background-color: rgba(58, 53, 255, 0.66);
 }
+
+.controller1,
+.controller2,
+.controller3 {
+  display: flex;
+}
+
+.play_stop_next {
+  height: 20px;
+  width: 20px;
+}

@@ -157,7 +157,7 @@ const randombg = () => {
     "url(image/background_sabaody.jpg)",
   ];
   document.getElementById("wrap").style.backgroundImage = bigSize[random];
-}
+};
 
 const show_button1 = () => {
   var x = document.getElementsByClassName("console1")[0];
