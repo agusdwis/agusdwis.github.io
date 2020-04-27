@@ -318,7 +318,7 @@ const startGame = () => {
     player01_move(`url${player01_image}`);
     player01.style.marginTop = 200 - 120;
   } else if (frame === 5) {
-    player01_move(`url${player01_image}`);
+    player01_move("url(image/PlayerA_stance.png)");
     player01.style.marginTop = 200 + 20;
   }
 
@@ -387,7 +387,7 @@ const startGame = () => {
     player02_move(`url${player02_image}`);
     player02.style.marginTop = 200 - 120;
   } else if (player2_frame === 5) {
-    player02_move(`url${player02_image}`);
+    player02_move("url(image/PlayerB_stance.png)");
     player02.style.marginTop = 200 + 20;
   }
 
