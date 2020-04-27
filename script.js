@@ -298,7 +298,7 @@ const startGame = () => {
   } else if (frame === 2) {
     // k1 = 1;
     player01_energy = player01_energy - damage;
-    player01_move(`url${player01_image}`);
+    player01_move("url(image/PlayerB.png)");
     if (aside === 1 && isup2 === 0) {
       player02_life = player02_life - 20;
       hit2 = 1;
@@ -367,7 +367,7 @@ const startGame = () => {
     player02_move(`url${player02_image}`);
   } else if (player2_frame === 2) {
     player02_energy = player02_energy - damage;
-    player02_move(`url${player02_image}`);
+    player02_move("url(image/PlayerA.png)");
     if (aside === 1 && isup1 === 0) {
       player01_life = player01_life - 20;
       hit1 = 1;
