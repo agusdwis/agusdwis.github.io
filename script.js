@@ -392,7 +392,7 @@ const startGame = () => {
   } else if (player2_frame === 4) {
     player02_move(`url${player02_image}`);
     player02.style.marginTop = 200 - 120;
-    jumping2.play();g
+    jumping2.play();
   } else if (player2_frame === 5) {
     player02_move("url(image/PlayerB_stance.png)");
     player02.style.marginTop = 200 + 20;
