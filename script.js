@@ -63,6 +63,7 @@ var kick_fx = new Sound("audio/kick_sfx.wav");
 var voice_over = new Sound("audio/voice_over.wav");
 var game_over = new Sound("audio/game_over.wav");
 var battle_fight = new Sound("audio/battle_music.mp3", 1, 0.1);
+var blip_sound = new Sound("audio/blip_sound.wav");
 
 // Define Player
 let player01;
@@ -178,6 +179,7 @@ const randombg = () => {
 
 // dropdown button
 const show_button1 = () => {
+  blip_sound.play();
   var x = document.getElementsByClassName("console1")[0];
   if (x.style.display === "none") {
     x.style.display = "block";
@@ -187,6 +189,7 @@ const show_button1 = () => {
 }
 
 const show_button2 = () => {
+  blip_sound.play();
   var x = document.getElementsByClassName("console2")[0];
   if (x.style.display === "none") {
     x.style.display = "block";
