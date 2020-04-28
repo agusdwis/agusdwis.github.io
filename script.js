@@ -64,6 +64,8 @@ var voice_over = new Sound("audio/voice_over.wav");
 var game_over = new Sound("audio/game_over.wav");
 var battle_fight = new Sound("audio/battle_music.mp3", 1, 0.1);
 var blip_sound = new Sound("audio/blip_sound.wav");
+var jumping = new Sound("audio/jumping.ogg");
+var jumping2 = new Sound("audio/jumping2.wav");
 
 // Define Player
 let player01;
@@ -123,7 +125,7 @@ const player02_move = (img) => {
 };
 
 // create sound fx
-function Sound(src, maxStreams = 5, vol = 1.0) {
+function Sound(src, maxStreams = 10, vol = 1.0) {
   this.streamNum = 0;
   this.streams = [];
   for (var i = 0; i < maxStreams; i++) {
@@ -186,7 +188,7 @@ const show_button1 = () => {
   } else {
     x.style.display = "none";
   }
-}
+};
 
 const show_button2 = () => {
   blip_sound.play();
@@ -196,7 +198,7 @@ const show_button2 = () => {
   } else {
     x.style.display = "none";
   }
-}
+};
 
 // Restart Game
 const restartGame = () => {
@@ -320,6 +322,7 @@ const startGame = () => {
   } else if (frame === 4) {
     player01_move(`url${player01_image}`);
     player01.style.marginTop = 200 - 120;
+    jumping.play();
   } else if (frame === 5) {
     player01_move("url(image/PlayerA_stance.png)");
     player01.style.marginTop = 200 + 20;
@@ -389,6 +392,7 @@ const startGame = () => {
   } else if (player2_frame === 4) {
     player02_move(`url${player02_image}`);
     player02.style.marginTop = 200 - 120;
+    jumping2.play();g
   } else if (player2_frame === 5) {
     player02_move("url(image/PlayerB_stance.png)");
     player02.style.marginTop = 200 + 20;
