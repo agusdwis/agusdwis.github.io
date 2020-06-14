@@ -5,4 +5,4 @@
 
 Made by Me and [Abdul Romli](https://github.com/adul11s)
 
-Please Visit [THIS](agusdwis.github.io) LINK to play our game!
+Please Visit [THIS](http://agusdwis.github.io/) LINK to play our game!
